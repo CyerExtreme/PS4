@@ -1,6 +1,6 @@
 <html manifest="900.cache">
 <head>
-<title>TheWizWiki 9.00 Host [GoldHEN v2.3]</title>
+<title>CyerExtreme Host [GoldHEN v2.3]</title>
 <style>
 body{background: linear-gradient(to bottom right, #063FAB, #01258A);color:white;font-size:28px;text-align:center;margin:0;overflow:hidden;}
 .info{position:relative;top:39%;}
@@ -9,7 +9,7 @@ body{background: linear-gradient(to bottom right, #063FAB, #01258A);color:white;
 history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));msgs.innerHTML="Instalando Offline Cache ... " + Percent + "%"};
 function DisplayCacheProgress(){
-setTimeout(function(){msgs.innerHTML="Cache Instalado Correctamente";},2000);
+setTimeout(function(){msgs.innerHTML="Cache Instalado Correctamente, reinicia el navegador.";},2000);
 setTimeout(function(){location.reload();},3000);
 }
 window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
