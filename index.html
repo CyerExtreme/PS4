@@ -19,11 +19,12 @@
             top: 39%;
         }
         .button {
-            background: linear-gradient(to bottom right, #063FAB, #01258A); /* Gradiente del botón */
+            background-color: blue; /* Gradiente del botón */
             color: white; /* Color del texto */
             border: 2px solid white; /* Bordes blancos */
             padding: 10px 15px; /* Espaciado interno más corto */
             font-size: 16px; /* Tamaño de la fuente */
+            width: 150px; /* Ancho fijo del botón */
             cursor: pointer; /* Cambia el cursor al pasar el mouse */
             margin: 20px; /* Margen */
         }
@@ -32,7 +33,7 @@
 <body onload="setTimeout(webkitExploit,500);">
     <script src="exploit.js"></script>
     <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
-    <button class="boton">payload</button>
+    <button class="boton">Payload</button>
     <script>
         if (window.applicationCache.status == '0') {
             window.location.replace("cache.html");
