@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+    <meta charset="utf-8" />
+    <title>PS4 9.00 Exploit/Jailbreak Menu</title>
+	<meta content="PS4 Exploit/Jailbreak Host for firmware 9.00 containing latest payloads for Linux, GoldHen, App2USB, Disable Updates, etc. with option to cache and exploit offline" name="description">
+	<link href="assets/style.css" rel="stylesheet">
+	<link rel="icon" href="assets/favicon.ico" sizes="32x32">
+</head>
+<body>
+	<script>
+		window.applicationCache.ondownloading = function()
+		{
+			alert("Se ha iniciado el almacenamiento en caché. Pulsa OK y espera a que termine.")
+		};
+		window.applicationCache.onprogress = function(a)
+		{
+			document.getElementById("progresscon").style.display="block";
+			document.getElementById("progressbarpc").innerHTML="<h3>Instalando en Cache: "+(Math.round(100*(a.loaded/a.total)))+"% Completado</h3>";
+			document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";
+		};
+		window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+		{
+			alert("Página almacenada en caché correctamente. Pulsa OK.")
+			document.getElementById("progresscon").style.display="none";
+		};
+	</script>
+	<div class="logo"></div>
+	<div class="maincon">
+		<div class="tab">
+			<button class="tablinks" onclick="opentab(event, 'Jailbreak')">GoldHEN Jailbreak</button>
+			<button class="tablinks" onclick="opentab(event, 'Linux')">Linux V3</button>
+			<button class="tablinks" onclick="opentab(event, 'Other')">Otros Payloads</button>
+		</div>
+		<div id="Jailbreak" class="tabcontent link">
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.3.js">GoldHen 2.3</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.4b14.js">GoldHen 2.4b14</a>
+		</div>
+		<div id="Linux" class="tabcontent link">
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/linux-900-1gb.js">1GB VRAM</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/linux-900-2gb.js">2GB VRAM</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/linux-900-3gb.js">3GB VRAM</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/linux-900-4gb.js">4GB VRAM</a>
+			<br />
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/Linux-ps4-pro-900-1gb.js">1GB VRAM (PS4 Pro)</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/Linux-ps4-pro-900-2gb.js">2GB VRAM (PS4 Pro)</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/Linux-ps4-pro-900-3gb.js">3GB VRAM (PS4 Pro)</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/Linux-ps4-pro-900-4gb.js">4GB VRAM (PS4 Pro)</a>			
+			<div class="rel">
+				<h2>Links</h2>
+				<ul>
+					<li>Descarga initramfs.cpio.gz - <a href="https://github.com/TheWizWikii/PS4-Stuff-Repository/releases/download/5/initramfs.cpio.gz" target="_blank">https://github.com/TheWizWikii/PS4-Stuff-Repository/releases/download/5/initramfs.cpio.gz</a></li>
+					<li>Descarga la Distribucion Linux V3 - <a href="https://mega.nz/file/lIBCWCxa#Lq9oWyleu7W6Zcg_qeuKA0JQNOz1SzS-WTOQAGHQ7iY" target="_blank">https://mega.nz/file/lIBCWCxa#Lq9oWyleu7W6Zcg_qeuKA0JQNOz1SzS-WTOQAGHQ7iY</a></li>
+					<li>PS3 Linux Kernels - <a href="https://github.com/Hakkuraifu/PS4Linux-Documentation" target="_blank">https://github.com/Hakkuraifu/PS4Linux-Documentation</a></li>
+				<ul>
+			</div>
+		</div>
+		<div id="Other" class="tabcontent link">
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/disable-updates-900.js">Desactivar Updates</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/enable-updates-900.js">Activar Updates</a>
+			<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/app-2-usb-900.js">App2USB</a>
+		</div>
+		<div class="ftrinfo">
+			<div class="waviy">
+				<span style="--i:1">&#8650;</span>
+				<span style="--i:2">Este</span>
+				<span style="--i:3">host</span>
+				<span style="--i:4">esta</span>
+				<span style="--i:5">creado</span>
+				<span style="--i:6">por</span>
+				<span style="--i:9">&#8650;</span>
+			</div>
+			<div class="waviy">
+				<span style="--i:1">
+					<a href="https://twitter.com/TheWizWiki" target="_blank">TheWizWiki</a>
+				</span>
+			</div>
+		</div>
+		<div id="progresscon">
+			<div id="progressbar">
+				<span id="progressbarpc"></span>
+			</div>
+			
+			</div>
+			<center><img src="./assets/thewizwiki.png" border="2px" width="250" height="250">
+			</div><center>
+
+		</div>
+		<center><p style="color:white;"> Creditos</b>: Theflow0, Znullptr, ChendoChap, Specter, Sleirsgoevy, SiSTRo, Al-Azif, PRB-Borg, Leeful, PSXITA, PS4Linux y muchos mas...</p>
+	</div></center>
+	
+	<script>
+		function opentab(evt, tabName) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		  }
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+		  document.getElementById(tabName).style.display = "block";
+		  evt.currentTarget.className += " active";
+		}
+	</script>
+</body>
+</html>
