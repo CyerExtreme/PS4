@@ -15,9 +15,6 @@
             position: relative;
             top: 39%;
         }
-        #miBoton {
-            display: none;
-        }
     </style>
     <script>
         // Evitar la navegación a través del historial
@@ -33,7 +30,6 @@
         function DisplayCacheProgress() {
             setTimeout(function() {
                 document.getElementById("msgs").innerHTML = "Cache Instalado Correctamente, reinicia el navegador.";
-                document.getElementById("miBoton").style.display = "block";
             }, 2000);
         }
 
