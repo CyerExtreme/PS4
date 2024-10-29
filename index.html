@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>CyerExtreme Host [GoldHEN v2.3]</title>
+    <title>CyerExtreme && LeoMasterLeaf V1</title>
     <style>
         body {
             background: linear-gradient(to bottom right, #063FAB, #01258A);
@@ -11,30 +12,85 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center; /* Centramos el contenido verticalmente */
+            align-items: center;
             height: 100vh;
+            position: relative; /* Para el posicionamiento absoluto de los botones */
         }
         .info {
             position: relative;
-            top: 39%;
+            margin-bottom: 20px; /* Espacio entre el texto y los botones */
         }
-        .button {
-            background-color: blue; /* Gradiente del botón */
-            color: white; /* Color del texto */
-            border: 2px solid white; /* Bordes blancos */
-            padding: 10px 15px; /* Espaciado interno más corto */
-            font-size: 16px; /* Tamaño de la fuente */
-            width: 20px; /* Ancho fijo del botón */
-            cursor: pointer; /* Cambia el cursor al pasar el mouse */
-            margin: 20px; /* Margen */
+        .botoon {
+            background: linear-gradient(to bottom right, #063FAB, #01258A);
+            border-radius: 12px;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 2px solid black;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px; /* Margen */
+            display: inline-block;
+        }
+        .botoon1 {
+            background: linear-gradient(to bottom right, #ab0606, #8a0101);
+            border-radius: 12px;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 2px solid black;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px; /* Margen */
+            display: inline-block;
+        }
+        .botoon2 {
+            background: linear-gradient(to bottom right, #0bab06, #018a08);
+            border-radius: 12px;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 2px solid black;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px; /* Margen */
+            display: inline-block;
+        }
+        .botoon3 {
+            background: linear-gradient(to bottom right, #aba806, #818a01);
+            border-radius: 12px;
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 2px solid black;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px; /* Margen */
+            display: inline-block;
+        }
+        .hidden-buttons {
+            display: none; /* Oculta los botones por defecto */
+            position: relative; /* Cambiado a relative para que estén en el flujo del documento */
+            margin-bottom: 10px; /* Espacio entre los botones adicionales y el botón original */
         }
     </style>
 </head>
 <body onload="setTimeout(webkitExploit,500);">
     <script src="exploit.js"></script>
     <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
-    <button class="boton">Payload</button>
+    <div id="additional-buttons" class="hidden-buttons">
+        <button class="botoon1">Botón 1</button>
+        <button class="botoon2">Botón 2</button>
+        <button class="botoon3">Botón 3</button>
+    </div>
+    <button class="botoon" onclick="toggleButtons()">Payload</button> <!-- Botón original ahora debajo -->
     <script>
+        function toggleButtons() {
+            const additionalButtons = document.getElementById('additional-buttons');
+            additionalButtons.style.display = additionalButtons.style.display === 'none' || additionalButtons.style.display === '' ? 'block' : 'none'; // Alterna la visibilidad
+        }
+
         if (window.applicationCache.status == '0') {
             window.location.replace("cache.html");
         }
