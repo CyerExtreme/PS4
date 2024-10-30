@@ -1,6 +1,6 @@
 // orbistoolbox.js
 async function executeBin() {
-    alert("orbistoolbox.js ha sido ejecutado."); // Alerta para verificar que el JS ha iniciado
+    alert("orbistoolbox.js ha sido ejecutado."); // Mensaje para verificar que el JS ha iniciado
 
     try {
         const response = await fetch('orbistoolbox.bin'); // Asegúrate de que el nombre del archivo sea correcto
