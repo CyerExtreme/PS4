@@ -129,12 +129,13 @@
 
         // Nueva función para ejecutar el script Orbis Toolbox
         function executeOrbisToolbox() {
-            // Aquí puedes incluir la lógica que necesitas para el Orbis Toolbox
-           alert("Orbis Toolbox está siendo ejecutado."); // Mensaje al pulsar el botón
+            // Mensaje al pulsar el botón
+            alert("Orbis Toolbox está siendo ejecutado."); // Mensaje al pulsar el botón
             console.log('Ejecutando Orbis Toolbox...');
-            // Ejemplo: si hay una función en orbistoolbox.js, puedes llamarla aquí
+            
+            // Asegúrate de que esta función esté definida en orbistoolbox.js
             if (typeof orbisToolboxFunction === 'function') {
-                orbisToolboxFunction(); // Asegúrate de que esta función esté definida en orbistoolbox.js
+                orbisToolboxFunction(); // Esta línea debe llamar a la función que ejecuta el bin
             }
         }
     </script>
