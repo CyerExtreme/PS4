@@ -79,7 +79,7 @@
 </style>
 </head>
 <body onload="setTimeout(webkitExploit,500);">
-<script src="exploit.js"></script>
+<script src="exploit.js" onload="onExploitLoad()"></script>
 <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
 <div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div> <!-- Cambié el ID a clase -->
 
@@ -96,7 +96,7 @@
             <button class="botoon6">App2USB</button>
         </div>
     </div>
-    <button class="botoon" onclick="toggleButtons()">Payload</button>
+    <button id="payload-button" class="botoon" style="display: none;" onclick="toggleButtons()">Payload</button>
 </div>
 <script>
 if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
@@ -109,6 +109,17 @@ function toggleButtons() {
     } else {
         additionalButtons.style.display = "none"; // Ocultar botones adicionales
     }
+}
+
+// Función para mostrar el botón "Payload" después de que se carga el exploit
+function onExploitLoad() {
+    document.getElementById('payload-button').style.display = 'block'; // Mostrar el botón
+}
+
+// Simulación de la función del exploit para demostración
+function webkitExploit() {
+    // Aquí iría el código del exploit.js, que debe ser ejecutado
+    console.log('Exploit ejecutado');
 }
 </script>
 </body>
