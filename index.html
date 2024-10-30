@@ -73,4 +73,51 @@
             background: linear-gradient(to bottom right, black, blue);
         }
         .botoon3, .botoon4, .botoon5, .botoon6 {
-        
+            background: linear-gradient(to bottom right, black, green);
+        }
+    </style>
+</head>
+<body onload="setTimeout(webkitExploit, 500);">
+    <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
+    <div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
+
+    <div class="button-container">
+        <div id="additional-buttons" class="hidden-buttons">
+            <div class="button-row">
+                <button class="botoon1" onclick="executeBin()">Orbis Toolbox</button>
+                <button class="botoon2">disable update</button>
+                <button class="botoon3">enable update</button>
+            </div>
+            <div class="button-row">
+                <button class="botoon4">db backup</button>
+                <button class="botoon5">db restaurar</button>
+                <button class="botoon6">App2USB</button>
+            </div>
+        </div>
+        <button id="payload-button" class="botoon" style="display: none;" onclick="toggleButtons()">Payload</button>
+    </div>
+
+    <script>
+        if (window.applicationCache.status == '0') {
+            window.location.replace("cache.html");
+        }
+
+        function toggleButtons() {
+            var additionalButtons = document.getElementById('additional-buttons');
+            additionalButtons.style.display = (additionalButtons.style.display === "none" || additionalButtons.style.display === "") ? "flex" : "none";
+        }
+
+        function showPayloadButton() {
+            document.getElementById('payload-button').style.display = 'block'; // Mostrar el botón
+        }
+
+        function webkitExploit() {
+            console.log('Exploit ejecutado');
+            showPayloadButton(); // Llama a la función para mostrar el botón
+        }
+    </script>
+
+    <script src="exploit.js"></script>
+    <script src="orbistoolbox.js"></script> <!-- Asegúrate de que este archivo está en la misma carpeta -->
+</body>
+</html>
