@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyerExtreme Host V1.1</title>
+    <title>CyerExtreme Host [GoldHEN v2.3]</title>
     <style>
         body {
             background: linear-gradient(to bottom right, black, purple);
@@ -29,9 +29,6 @@
             font-size: 10px;
         }
         .button-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             position: absolute;
             bottom: 20px;
             left: 50%;
@@ -47,7 +44,7 @@
             border: 2px solid black;
             font-size: 19px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .hidden-buttons {
             display: none;
@@ -59,9 +56,6 @@
             display: flex;
             justify-content: center;
             gap: 10px;
-        }
-        .button-row:nth-child(2) {
-            margin-top: 5px;
         }
         .botoon1, .botoon2, .botoon3, .botoon4, .botoon5, .botoon6 {
             width: 100px;
@@ -79,66 +73,4 @@
             background: linear-gradient(to bottom right, black, blue);
         }
         .botoon3, .botoon4, .botoon5, .botoon6 {
-            background: linear-gradient(to bottom right, black, green);
-        }
-    </style>
-</head>
-<body onload="setTimeout(webkitExploit, 500);">
-    <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
-    <div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
-
-    <div class="button-container">
-        <div id="additional-buttons" class="hidden-buttons">
-            <div class="button-row">
-                <button class="botoon1" onclick="executeOrbisToolbox()">Orbis Toolbox</button>
-                <button class="botoon2">disable update</button>
-                <button class="botoon3">enable update</button>
-            </div>
-            <div class="button-row">
-                <button class="botoon4">db backup</button>
-                <button class="botoon5">db restaurar</button>
-                <button class="botoon6">App2USB</button>
-            </div>
-        </div>
-        <button id="payload-button" class="botoon" style="display: none;" onclick="toggleButtons()">Payload</button>
-    </div>
-
-    <script>
-        if (window.applicationCache.status == '0') {
-            window.location.replace("cache.html");
-        }
-
-        function toggleButtons() {
-            var additionalButtons = document.getElementById('additional-buttons');
-            additionalButtons.style.display = (additionalButtons.style.display === "none" || additionalButtons.style.display === "") ? "flex" : "none";
-        }
-
-        // Función para mostrar el botón "Payload"
-        function showPayloadButton() {
-            document.getElementById('payload-button').style.display = 'block'; // Mostrar el botón
-        }
-
-        // Simulación de la función del exploit para demostración
-        function webkitExploit() {
-            // Aquí iría el código del exploit.js, que debe ser ejecutado
-            console.log('Exploit ejecutado');
-
-            // Llamar a la función para mostrar el botón después de la ejecución
-            showPayloadButton();
-        }
-
-        // Nueva función para ejecutar el script Orbis Toolbox
-        function executeOrbisToolbox() {
-            // Aquí puedes incluir la lógica que necesitas para el Orbis Toolbox
-            console.log('Ejecutando Orbis Toolbox...');
-            // Ejemplo: si hay una función en orbistoolbox.js, puedes llamarla aquí
-            if (typeof orbisToolboxFunction === 'function') {
-                orbisToolboxFunction(); // Asegúrate de que esta función esté definida en orbistoolbox.js
-            }
-        }
-    </script>
-
-    <script src="exploit.js"></script>
-    <script src="orbistoolbox.js"></script> <!-- Cargar orbistoolbox.js -->
-</body>
-</html>
+        
