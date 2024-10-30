@@ -33,7 +33,7 @@
             flex-direction: column;
             align-items: center;
             position: absolute;
-            bottom: 20px;
+            bottom: 20px; /* Mantén esta línea para el contenedor */
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -81,8 +81,11 @@
         .botoon3, .botoon4, .botoon5, .botoon6 {
             background: linear-gradient(to bottom right, black, green);
         }
-         #payload-button {
-            margin-top: 10px; /* Ajusta este valor según sea necesario */
+
+        /* Ajusta la posición del botón Payload */
+        #payload-button {
+            position: relative; /* Agregar posición relativa */
+            top: -10px; /* Ajusta este valor para mover el botón hacia arriba */
         }
     </style>
 </head>
