@@ -2,80 +2,7 @@
 <head>
 <title>CyerExtreme Host [GoldHEN v2.3]</title>
 <style>
-  body {
-            background: linear-gradient(to bottom right, black, purple);
-            color: white;
-            font-size: 28px;
-            text-align: center;
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: relative;
-            }
-            .info {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .creadores {
-            position: absolute;
-            bottom: 5px;
-            font-size: 10px;
-        }
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-        .botoon {
-            background: linear-gradient(to bottom right, purple, black);
-            border-radius: 12px;
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 19px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .hidden-buttons {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .button-row {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .button-row:nth-child(2) {
-            margin-top: 5px;
-        }
-    
-        .botoon1, .botoon2, .botoon3, .botoon4, .botoon5, .botoon6 {
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 12px;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-        .botoon1 {
-            background: linear-gradient(to bottom right, black, #8a0101);
-        }
-        .botoon2 {
-            background: linear-gradient(to bottom right, black, blue);
-        }
-        .botoon3, .botoon4, .botoon5, .botoon6 {
-            background: linear-gradient(to bottom right, black, green);
-        }
+  /* Estilos previamente definidos */
 </style>
 </head>
 <body onload="setTimeout(webkitExploit, 500);">
@@ -103,7 +30,6 @@ if (window.applicationCache.status == '0') {
     window.location.replace("cache.html");
 }
 
-// Definir la función toggleButtons
 function toggleButtons() {
     var additionalButtons = document.getElementById('additional-buttons');
     additionalButtons.style.display = (additionalButtons.style.display === "none" || additionalButtons.style.display === "") ? "flex" : "none";
