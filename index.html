@@ -94,4 +94,38 @@
             <div class="button-row">
                 <button class="botoon4">db backup</button>
                 <button class="botoon5">db restaurar</button>
-                <button class="botoon6">App
+                <button class="botoon6">App2USB</button>
+            </div>
+        </div>
+        <button id="payload-button" class="botoon" style="display: none;" onclick="toggleButtons()">Payload</button>
+    </div>
+
+    <script src="exploit.js"></script>
+    <script src="orbistoolbox.js"></script>
+
+    <script>
+        if (window.applicationCache.status == '0') {
+            window.location.replace("cache.html");
+        }
+
+        function toggleButtons() {
+            var additionalButtons = document.getElementById('additional-buttons');
+            additionalButtons.style.display = (additionalButtons.style.display === "none" || additionalButtons.style.display === "") ? "flex" : "none";
+        }
+
+        // Función para mostrar el botón "Payload"
+        function showPayloadButton() {
+            document.getElementById('payload-button').style.display = 'block'; // Mostrar el botón
+        }
+
+        // Simulación de la función del exploit para demostración
+        function webkitExploit() {
+            // Aquí iría el código del exploit.js, que debe ser ejecutado
+            console.log('Exploit ejecutado');
+
+            // Llamar a la función para mostrar el botón después de la ejecución
+            showPayloadButton();
+        }
+    </script>
+</body>
+</html>
