@@ -57,6 +57,9 @@
             justify-content: center;
             gap: 10px;
         }
+        .button-row:nth-child(2) {
+            margin-top: 5px;
+        }
         .botoon1, .botoon2, .botoon3, .botoon4, .botoon5, .botoon6 {
             width: 100px;
             height: 30px;
@@ -91,33 +94,4 @@
             <div class="button-row">
                 <button class="botoon4">db backup</button>
                 <button class="botoon5">db restaurar</button>
-                <button class="botoon6">App2USB</button>
-            </div>
-        </div>
-        <button id="payload-button" class="botoon" style="display: none;" onclick="toggleButtons()">Payload</button>
-    </div>
-
-    <script>
-        if (window.applicationCache.status == '0') {
-            window.location.replace("cache.html");
-        }
-
-        function toggleButtons() {
-            var additionalButtons = document.getElementById('additional-buttons');
-            additionalButtons.style.display = (additionalButtons.style.display === "none" || additionalButtons.style.display === "") ? "flex" : "none";
-        }
-
-        function showPayloadButton() {
-            document.getElementById('payload-button').style.display = 'block'; // Mostrar el botón
-        }
-
-        function webkitExploit() {
-            console.log('Exploit ejecutado');
-            showPayloadButton(); // Llama a la función para mostrar el botón
-        }
-    </script>
-
-    <script src="exploit.js"></script>
-    <script src="orbistoolbox.js"></script> <!-- Asegúrate de que este archivo está en la misma carpeta -->
-</body>
-</html>
+                <button class="botoon6">App
