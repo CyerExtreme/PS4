@@ -1,125 +1,16 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Host PS4 9.00 V1</title>
-    <style>
-        body {
-            background: linear-gradient(to bottom right, black, purple);
-            color: white;
-            font-size: 28px;
-            text-align: center;
-            margin: 0;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            position: relative;
-        }
-        .info {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .creadores {
-            position: absolute;
-            bottom: 5px;
-            font-size: 5px;
-        }
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
-        .botoon {
-            background: linear-gradient(to bottom right, purple, black);
-            border-radius: 12px;
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 19px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .hidden-buttons {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .button-row {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .button-row:nth-child(2) {
-            margin-top: 5px;
-        }
-    
-        .botoon1, .botoon2, .botoon3, .botoon4, .botoon5, .botoon6 {
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 12px;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-        .botoon1 {
-            background: linear-gradient(to bottom right, black, #8a0101);
-        }
-        .botoon2 {
-            background: linear-gradient(to bottom right, black, blue);
-        }
-        .botoon3, .botoon4, .botoon5, .botoon6 {
-            background: linear-gradient(to bottom right, black, green);
-        }
-    </style>
-    <script src="exploit.js"></script> <!-- Cargamos exploit.js primero -->
+<title>CyerExtreme Host [GoldHEN v2.3]</title>
+<style>
+body{background: linear-gradient(to bottom right, #063FAB, #01258A);color:white;font-size:28px;text-align:center;margin:0;overflow:hidden;}
+.info{position:relative;top:39%;}
+</style>
 </head>
-<body onload="setTimeout(webkitExploit,500);">
-    <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
-    <div id="msgs" class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
-
-    <div class="button-container">
-        <div id="additional-buttons" class="hidden-buttons">
-            <div class="button-row">
-                <button class="botoon1" onclick="executeBin()">Orbis Toolbox</button>
-                <button class="botoon2">disable update</button>
-                <button class="botoon3">enable update</button>
-            </div>
-            <div class="button-row">
-                <button class="botoon4">db backup</button>
-                <button class="botoon5">db restaurar</button>
-                <button class="botoon6">App2USB</button>
-            </div>
-        </div>
-        <button class="botoon" onclick="toggleButtons()">Payload</button>
-    </div>
-
-    <script>
-        function toggleButtons() {
-            const additionalButtons = document.getElementById('additional-buttons');
-            additionalButtons.style.display = additionalButtons.style.display === 'none' || additionalButtons.style.display === '' ? 'flex' : 'none';
-        }
-
-        function loadOrbisToolbox() {
-            const script = document.createElement("script");
-            script.src = "orbistoolbox.js";
-            document.head.appendChild(script);
-        }
-
-        function exploitCompleted() {
-            document.getElementById("msgs").innerText = "Exploit completado. Cargando Orbis Toolbox...";
-            loadOrbisToolbox();
-        }
-
-        if (window.applicationCache.status === 0) {
-            window.location.replace("cache.html");
-        }
-    </script>
+<body onload="setTimeout(webkitExploit,500);"><!--  -->
+<script src="exploit.js"></script>
+<div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
+<script>
+if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
+</script>
 </body>
 </html>
