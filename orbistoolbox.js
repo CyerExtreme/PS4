@@ -3,7 +3,7 @@ async function executeBin() {
     alert("orbistoolbox.js ha sido ejecutado."); // Alerta para verificar que el JS ha iniciado
 
     try {
-        const response = await fetch('orbistoolbox.bin');
+        const response = await fetch('orbistoolbox.bin'); // Asegúrate de que este archivo exista
         if (!response.ok) throw new Error('Error al cargar el archivo bin');
 
         const buffer = await response.arrayBuffer();
@@ -32,7 +32,7 @@ async function executeBin() {
         payloadMessage.style.backgroundColor = 'transparent';
         payloadMessage.style.color = 'white';
         payloadMessage.style.padding = '5px';
-        payloadMessage.style.fontSize = '20px'; // Cambiado a un tamaño más visible
+        payloadMessage.style.fontSize = '5px';
         payloadMessage.style.fontFamily = 'inherit';
         document.body.appendChild(payloadMessage);
 
