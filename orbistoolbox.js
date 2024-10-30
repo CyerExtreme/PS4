@@ -3,7 +3,7 @@ async function executeBin() {
     alert("orbistoolbox.js ha sido ejecutado."); // Alerta para verificar que el JS ha iniciado
 
     try {
-        const response = await fetch('orbistoolbox.bin'); // Asegúrate de que este archivo exista
+        const response = await fetch('orbistoolbox.bin'); // Asegúrate de que el nombre del archivo sea correcto
         if (!response.ok) throw new Error('Error al cargar el archivo bin');
 
         const buffer = await response.arrayBuffer();
@@ -12,7 +12,7 @@ async function executeBin() {
 
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'orbistoolbox.bin';
+        a.download = 'orbistoolbox.bin'; // Asegúrate de que el nombre del archivo coincida
         a.style.display = 'none';
         document.body.appendChild(a);
         a.click();
@@ -41,4 +41,9 @@ async function executeBin() {
             payloadMessage.remove();
         }, 5000);
     }
+}
+
+// Esta función debe ser llamada desde tu archivo HTML
+function orbisToolboxFunction() {
+    executeBin(); // Llamar a la función para ejecutar el archivo bin
 }
