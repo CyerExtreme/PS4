@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html manifest="900.cache">
+<html lang="es">
 <head>
-    <title>PeneHub V1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host PS4 9.00 V1</title>
     <style>
         body {
             background: linear-gradient(to bottom right, #063FAB, #01258A);
@@ -20,14 +22,12 @@
         }
     </style>
     <script>
-        // Evitar la navegación a través del historial
-        history.replaceState(null, null, 'index.html');
-        var histlength = history.length;
-        history.go(-histlength);
-
+        // Funciones de progreso de caché
         function DLProgress(e) {
-            var Percent = Math.round(e.loaded / e.total * 100);
-            document.getElementById("msgs").innerHTML = "Instalando Offline Cache ... " + Percent + "%";
+            if (e.lengthComputable) {
+                var percent = Math.round((e.loaded / e.total) * 100);
+                document.getElementById("msgs").innerHTML = "Instalando Offline Cache ... " + percent + "%";
+            }
         }
 
         function DisplayCacheProgress() {
@@ -41,16 +41,19 @@
             location.reload();
         }
 
-        window.applicationCache.addEventListener("progress", DLProgress, false);
-        window.applicationCache.oncached = function(e) {
-            DisplayCacheProgress();
-        };
-        window.applicationCache.onupdateready = function(e) {
-            DisplayCacheProgress();
+        window.onload = function() {
+            if (window.applicationCache) {
+                window.applicationCache.addEventListener("progress", DLProgress, false);
+                window.applicationCache.oncached = DisplayCacheProgress;
+                window.applicationCache.onupdateready = DisplayCacheProgress;
+            }
         };
     </script>
 </head>
-<body style="overflow: hidden;">
-    <div id="msgs" class="info" style='-webkit-font-feature-settings:"tnum";font-feature-settings:"tnum";'><button id="miBoton" onclick="recargar()">Recargar</button></div>
+<body>
+    <div id="msgs" class="info">
+        Cargando...
+        <button id="miBoton" onclick="recargar()">Recargar</button>
+    </div>
 </body>
 </html>

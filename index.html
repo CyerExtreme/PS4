@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CyerExtreme && LeoMasterLeaf V1</title>
+    <title>Host PS4 9.00 V1</title>
     <style>
         body {
-            background: linear-gradient(to bottom right, #063FAB, #01258A);
+            background: linear-gradient(to bottom right, black, purple);
             color: white;
             font-size: 28px;
             text-align: center;
@@ -12,83 +12,114 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centramos el contenido verticalmente */
+            justify-content: center;
             align-items: center;
             height: 100vh;
-            position: relative; /* Para el posicionamiento absoluto de los botones */
+            position: relative;
         }
         .info {
             position: relative;
-            margin-bottom: 20px; /* Espacio entre el texto y los botones */
+            margin-bottom: 20px;
+        }
+        .creadores {
+            position: absolute;
+            bottom: 5px;
+            font-size: 5px;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
         }
         .botoon {
-            background: linear-gradient(to bottom right, #063FAB, #01258A);
+            background: linear-gradient(to bottom right, purple, black);
             border-radius: 12px;
             width: 100px;
             height: 30px;
             color: white;
             border: 2px solid black;
-            font-size: 20px;
+            font-size: 19px;
             cursor: pointer;
-            margin: 10px; /* Margen */
-            display: inline-block;
-        }
-        .botoon1 {
-            background: linear-gradient(to bottom right, #ab0606, #8a0101);
-            border-radius: 12px;
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 20px;
-            cursor: pointer;
-            margin: 10px; /* Margen */
-            display: inline-block;
-        }
-        .botoon2 {
-            background: linear-gradient(to bottom right, #0bab06, #018a08);
-            border-radius: 12px;
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 20px;
-            cursor: pointer;
-            margin: 10px; /* Margen */
-            display: inline-block;
-        }
-        .botoon3 {
-            background: linear-gradient(to bottom right, #aba806, #818a01);
-            border-radius: 12px;
-            width: 100px;
-            height: 30px;
-            color: white;
-            border: 2px solid black;
-            font-size: 20px;
-            cursor: pointer;
-            margin: 10px; /* Margen */
-            display: inline-block;
+            margin-top: 10px;
         }
         .hidden-buttons {
-            display: none; /* Oculta los botones por defecto */
-            position: relative; /* Cambiado a relative para que estén en el flujo del documento */
-            margin-bottom: 10px; /* Espacio entre los botones adicionales y el botón original */
+            display: none; /* Se mantiene oculto inicialmente */
+            flex-direction: column; /* Cambiado a columna para crear filas */
+            align-items: center; /* Centrar botones */
+            margin-bottom: 10px;
+        }
+        .button-row {
+            display: flex; /* Usar flex para la fila de botones */
+            justify-content: center; /* Centrar los botones en la fila */
+            gap: 10px; /* Espacio entre botones */
+        }
+        .button-row:nth-child(2) {
+            margin-top: 5px; /* Espacio entre la primera y segunda fila */
+        }
+    
+        .botoon1, .botoon2, .botoon3, .botoon4, .botoon5, .botoon6 {
+            width: 100px;
+            height: 30px;
+            color: white;
+            border: 2px solid black;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .botoon1 {
+            background: linear-gradient(to bottom right, black, #8a0101);
+            font-size: 12px;
+        }
+        .botoon2 {
+            background: linear-gradient(to bottom right, black, blue);
+            font-size: 12px;
+        }
+        .botoon3 {
+            background: linear-gradient(to bottom right, black, green);
+            font-size: 12px;
+        }
+        .botoon4 {
+            background: linear-gradient(to bottom right, black, green);
+            font-size: 12px;
+        }
+        .botoon5 {
+            background: linear-gradient(to bottom right, black, green);
+            font-size: 12px;
+        }
+        .botoon6 {
+            background: linear-gradient(to bottom right, black, green);
+            font-size: 12px;
         }
     </style>
+    <script src="exploit.js"></script>
+    <script src="orbistoolbox.js"></script> <!-- Cambiado a orbistolbox.js -->
 </head>
 <body onload="setTimeout(webkitExploit,500);">
-    <script src="exploit.js"></script>
     <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
-    <div id="additional-buttons" class="hidden-buttons">
-        <button class="botoon1">Botón 1</button>
-        <button class="botoon2">Botón 2</button>
-        <button class="botoon3">Botón 3</button>
+    <div id="msgs" class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
+
+    <div class="button-container">
+        <div id="additional-buttons" class="hidden-buttons">
+            <div class="button-row">
+                <button class="botoon1" onclick="executeBin()">Orbis Toolbox</button> <!-- Activa orbistolbox.js -->
+                <button class="botoon2">disable update</button>
+                <button class="botoon3">enable update</button>
+            </div>
+            <div class="button-row">
+                <button class="botoon4">db backup</button>
+                <button class="botoon5">db restaurar</button>
+                <button class="botoon6">App2USB</button>
+            </div>
+        </div>
+        <button class="botoon" onclick="toggleButtons()">Payload</button>
     </div>
-    <button class="botoon" onclick="toggleButtons()">Payload</button> <!-- Botón original ahora debajo -->
+
     <script>
         function toggleButtons() {
             const additionalButtons = document.getElementById('additional-buttons');
-            additionalButtons.style.display = additionalButtons.style.display === 'none' || additionalButtons.style.display === '' ? 'block' : 'none'; // Alterna la visibilidad
+            additionalButtons.style.display = additionalButtons.style.display === 'none' || additionalButtons.style.display === '' ? 'flex' : 'none';
         }
 
         if (window.applicationCache.status == '0') {
