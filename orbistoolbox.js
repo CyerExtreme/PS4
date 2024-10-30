@@ -32,7 +32,7 @@ async function executeBin() {
         payloadMessage.style.backgroundColor = 'transparent';
         payloadMessage.style.color = 'white';
         payloadMessage.style.padding = '5px';
-        payloadMessage.style.fontSize = '5px';
+        payloadMessage.style.fontSize = '20px'; // Cambiado a un tamaño más visible
         payloadMessage.style.fontFamily = 'inherit';
         document.body.appendChild(payloadMessage);
 
