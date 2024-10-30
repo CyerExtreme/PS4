@@ -78,10 +78,9 @@
         }
 </style>
 </head>
-<body onload="setTimeout(webkitExploit,500);">
-<script src="exploit.js" onload="onExploitLoad()"></script>
+<body onload="setTimeout(webkitExploit, 500);">
 <div id="msgs" class="info">Ejecutando Exploit, Espera por favor ...</div>
-<div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div> <!-- Cambié el ID a clase -->
+<div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
 
 <div class="button-container">
     <div id="additional-buttons" class="hidden-buttons">
@@ -98,21 +97,20 @@
     </div>
     <button id="payload-button" class="botoon" style="display: none;" onclick="toggleButtons()">Payload</button>
 </div>
+
 <script>
-if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
+if (window.applicationCache.status == '0') {
+    window.location.replace("cache.html");
+}
 
 // Definir la función toggleButtons
 function toggleButtons() {
     var additionalButtons = document.getElementById('additional-buttons');
-    if (additionalButtons.style.display === "none" || additionalButtons.style.display === "") {
-        additionalButtons.style.display = "flex"; // Mostrar botones adicionales
-    } else {
-        additionalButtons.style.display = "none"; // Ocultar botones adicionales
-    }
+    additionalButtons.style.display = (additionalButtons.style.display === "none" || additionalButtons.style.display === "") ? "flex" : "none";
 }
 
-// Función para mostrar el botón "Payload" después de que se carga el exploit
-function onExploitLoad() {
+// Función para mostrar el botón "Payload"
+function showPayloadButton() {
     document.getElementById('payload-button').style.display = 'block'; // Mostrar el botón
 }
 
@@ -120,7 +118,12 @@ function onExploitLoad() {
 function webkitExploit() {
     // Aquí iría el código del exploit.js, que debe ser ejecutado
     console.log('Exploit ejecutado');
+
+    // Llamar a la función para mostrar el botón después de la ejecución
+    showPayloadButton();
 }
 </script>
+
+<script src="exploit.js"></script>
 </body>
 </html>
