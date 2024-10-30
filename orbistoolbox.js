@@ -1,28 +1,29 @@
 // orbistoolbox.js
 async function executeBin() {
-    alert("orbistoolbox.js ha sido ejecutado."); // Mensaje para verificar que el JS ha iniciado
+    alert("orbistoolbox.js ha sido ejecutado."); // Alerta para verificar que el JS ha iniciado
 
     try {
-        const response = await fetch('orbistoolbox.bin'); // Asegúrate de que el nombre del archivo sea correcto
+        const response = await fetch('orbistoolbox.bin');
         if (!response.ok) throw new Error('Error al cargar el archivo bin');
 
         const buffer = await response.arrayBuffer();
         const blob = new Blob([buffer], { type: 'application/octet-stream' });
         const url = URL.createObjectURL(blob);
 
+        // Crear un enlace y hacer clic para descargar el archivo
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'orbistoolbox.bin'; // Asegúrate de que el nombre del archivo coincida
-        a.style.display = 'none';
+        a.download = 'orbistoolbox.bin'; // Nombre del archivo a descargar
         document.body.appendChild(a);
         a.click();
 
-        URL.revokeObjectURL(url);
+        URL.revokeObjectURL(url); // Liberar el objeto URL
         console.log("Payload binario ejecutado correctamente.");
     } catch (error) {
         console.error("Error al ejecutar el archivo bin:", error);
+        alert("Error al ejecutar el archivo bin: " + error.message); // Mostrar error en un alerta
     } finally {
-        // Crear el mensaje "Payload cargado" con el mismo estilo que el mensaje "Creado por..."
+        // Mensaje de carga
         const payloadMessage = document.createElement('div');
         payloadMessage.textContent = "Orbis Toolbox cargado";
         payloadMessage.style.position = 'absolute';
