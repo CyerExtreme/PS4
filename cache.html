@@ -4,11 +4,13 @@
 <style>
 body{background: linear-gradient(to bottom right, black, purple);color:white;font-size:28px;text-align:center;margin:0;overflow:hidden;}
 .info{position:relative;top:39%;}
-  .creadores {
-            position: absolute;
-            bottom: 5px;
-            font-size: 10px;
-  }
+.creadores {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    font-size: 10px;
+    text-align: center;
+}
 </style>
 <script>
 history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
@@ -17,12 +19,14 @@ function DisplayCacheProgress(){
 setTimeout(function(){msgs.innerHTML="Cache Instalado Correctamente";},2000);
 setTimeout(function(){location.reload();},3000);
 }
-window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
 </head>
-  
+
 <body style=overflow:hidden>
 <div id=msgs class=info style='-webkit-font-feature-settings:"tnum";font-feature-settings:"tnum";'></div>
-      <div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
+<div class="creadores">Creado por CyerExtreme y LeoMasterLeaf</div>
 </body>
 </html>
